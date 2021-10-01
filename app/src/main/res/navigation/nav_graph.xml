@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/JokesFragment">
+
+    <fragment
+        android:id="@+id/JokesFragment"
+        android:name="com.vosker.technicaltest.ui.JokeFragment"
+        android:label="@string/fragment_jokes_label"
+        tools:layout="@layout/fragment_jokes">
+
+        <action
+            android:id="@+id/action_JokesFragment_to_JokeDetailFragment"
+            app:destination="@id/JokeDetailFragment">
+
+            <argument
+                android:name="Joke"
+                app:argType="com.vosker.technicaltest.ui.model.JokeUiModel"/>
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/JokeDetailFragment"
+        android:name="com.vosker.technicaltest.ui.JokeDetailFragment"
+        android:label="@string/fragment_joke_detail_label"
+        tools:layout="@layout/fragment_joke_detail">
+
+        <argument
+            android:name="Joke"
+            app:argType="com.vosker.technicaltest.ui.model.JokeUiModel"/>
+
+    </fragment>
+
+</navigation>
